@@ -14,6 +14,12 @@ const pool = new Pool({
   database: process.env.DB_NAME,
   
 });
+async function getData() {
+  const query = 'SELECT * FROM instruments';
+  const result = await pool.query(query);
+  return result.rows;
+}
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });

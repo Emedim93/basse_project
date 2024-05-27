@@ -13,6 +13,16 @@ app.get("/", (req, res) => {
   res.json({message: "Bienvenido!"})
 });
 
+app.get('/data', async (req, res) => {
+    try {
+      const data = await GetData();
+      res.send(data);
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Erreur lors de la récupération des données')
+    }
+});
+
 
 app.use("/instruments", instrumentsRoutes);
 
