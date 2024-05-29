@@ -24,7 +24,11 @@ app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
-module.exports = pool;
+module.exports = {
+  pool,
+getData
+};
+
 /*
 pool.connect((err, client, release) => {
   if (err) {

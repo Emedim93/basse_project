@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
 
 app.get('/data', async (req, res) => {
     try {
-      const data = await GetData();
+      const data = await db.GetData();
       res.send(data);
     } catch (error) {
       console.error(error);
