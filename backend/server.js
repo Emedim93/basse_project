@@ -27,7 +27,6 @@ app.get('/data', async (req, res) => {
 
 
 app.use("/instruments", instrumentsRoutes);
-app.use('/users', usersRoutes);
 
 const PORT = process.env.PORT || 3000; // Utilisez un port différent de celui de PostgreSQL
 app.listen(PORT, () => {
