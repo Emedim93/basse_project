@@ -2,6 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const db = require("./db");
 const instrumentsRoutes = require('./routes/instrumentsRoutes');
+const usersRoutes = require('./routes/usersRoutes');
 
 dotenv.config();
 
@@ -12,6 +13,7 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.json({message: "Bienvenido!"})
 });
+
 
 app.get('/data', async (req, res) => {
     try {
@@ -25,6 +27,7 @@ app.get('/data', async (req, res) => {
 
 
 app.use("/instruments", instrumentsRoutes);
+app.use('/users', usersRoutes);
 
 const PORT = process.env.PORT || 3000; // Utilisez un port différent de celui de PostgreSQL
 app.listen(PORT, () => {
