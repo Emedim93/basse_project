@@ -40,7 +40,8 @@ header {
 
 body {
     
-    background-color: rgb(138, 17, 17);
+    background-image: url("/backend/bass-guitar-back.jpg");
+    background-size: cover;
 }
 
 h1 {
