@@ -18,6 +18,7 @@ async function getData() {
   const query = 'SELECT * FROM instruments';
   const result = await pool.query(query);
   return result.rows;
+  
 }
 
 app.listen(PORT, () => {
