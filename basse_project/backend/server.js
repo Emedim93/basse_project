@@ -2,10 +2,10 @@ const express = require('express');
 const dotenv = require('dotenv');
 const db = require("./db");
 const instrumentsRoutes = require('./routes/instrumentsRoutes');
+const app = express();
 
 dotenv.config();
 
-const app = express();
 
 app.use(express.json());
 
